@@ -7,8 +7,7 @@
 build/
 
 # ignore symbolic links
-embed/pybind11
-extension/pybind11
+pybind11
 
 # User-specific files
 *.suo
