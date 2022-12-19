@@ -4,22 +4,23 @@ Examples of using pybind11 with Visual Studio 2017 and cmake in a x64 Windows en
 
 # Setup
 
-1. Create symbolic links to pybind11 folder, e.g. on cmd in Admin mode:
+1. Update the sub-module:
 
-    mklink /D D:\pybind11_with_MSVC_2017\simple_extension\pybind11 D:\pybind11
-    
-This needs to be done for each project you like run from this repository.
+    git submodule update --init    
+
+Explanation: Your code "example.cpp" looks for the header files in the pybind11 directory. git submodule command clones the pybind header files from the official repo. 
 
 
 2. Open Visual Studio x64 Native Tools Command Prompt for VS 2017
 
-Build extension
+How to build simple_extension
 
-    cd extension
+    cd simple_extension
     mkdir build
     cd build
     cmake -A x64 ..
     cmake --build . --config Release --target example
+    cd Release
     python
     >>> import example
     >>> example.add(9,7)
